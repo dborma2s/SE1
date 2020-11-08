@@ -7,8 +7,4 @@ public class Factory {
         return new GermanTranslator();
 
     }
-    public void create()
-    {
-
-    }
 }
