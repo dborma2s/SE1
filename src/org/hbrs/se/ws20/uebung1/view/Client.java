@@ -1,5 +1,10 @@
 package org.hbrs.se.ws20.uebung1.view;
 
+
+import org.hbrs.se.ws20.uebung1.control.Factory;
+import org.hbrs.se.ws20.uebung1.control.GermanTranslator;
+import org.hbrs.se.ws20.uebung1.control.Translator;
+
 class Client {
 
 	/*
@@ -10,6 +15,9 @@ class Client {
 		// mit dem übergegebenen Wert der Variable aNumber 
 		// aufgerufen werden.
 		// Strenge Implementierung gegen das Interface Translator gewuenscht!
+		Translator translator = Factory.createGermanTranslator();
+		String result = translator.translateNumber(1);
+
 
 		System.out.println("Das Ergebnis der Berechnung: " +
 				"[das Ergebnis an dieser Stelle]" );
