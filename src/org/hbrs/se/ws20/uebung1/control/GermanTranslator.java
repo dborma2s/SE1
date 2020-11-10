@@ -16,7 +16,7 @@ public class GermanTranslator implements Translator {
 			}
 		catch(Exception e)
 		{
-			return "Übersetzung der Zahl" + number + "nicht möglich mit Version" + Translator.version;
+			return "Übersetzung der Zahl " + number + " nicht möglich mit Version " + Translator.version;
 		}
 	}
 		

@@ -16,12 +16,14 @@ class Client {
 		// aufgerufen werden.
 		// Strenge Implementierung gegen das Interface Translator gewuenscht!
 		Translator translator = Factory.createGermanTranslator();
-		String result = translator.translateNumber(1);
+		String result = translator.translateNumber(aNumber);
+		System.out.println("Ergebnis: " + result);
 
+	}
 
-		System.out.println("Das Ergebnis der Berechnung: " +
-				"[das Ergebnis an dieser Stelle]" );
-
+	public static void main(String[] args) {
+		Client c = new Client();
+		c.display(9);
 	}
 }
 
