@@ -60,6 +60,7 @@ public class Container implements Member{
             }
         }
         list.add(member);
+        System.out.println(member.toString() + " konnte hinzugefuegt werden");
 
     }
     public String deleteMember(int id)
