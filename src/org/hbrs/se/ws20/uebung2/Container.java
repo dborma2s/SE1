@@ -3,56 +3,11 @@ package org.hbrs.se.ws20.uebung2;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Container implements Member{
-    static ArrayList<Member> list = new ArrayList<>();
-    private int id;
+//Verwaltung der Objekte
+public class Container {
+    private ArrayList<Member> list = new ArrayList<>();
 
-    public Container(int id)
-    {
-        this.id = id;
-    }
-
-    public Integer getID() {
-        return this.id;
-    }
-
-    public static void main(String[] args)  {
-        Container c = new Container(1);
-
-        Member m0 = new Container(0);
-        Member m1 = new Container(4);
-        Member m2 = new Container(3);
-        Member m3 = new Container(2);
-        Member m4 = new Container(5);
-
-        try {
-            c.addMember(m0);
-            c.addMember(m1);
-            c.addMember(m2);
-            c.addMember(m3);
-            c.addMember(m4);
-        }
-        catch(ContainerException e)
-        {
-            System.out.println(e.toString());
-        }
-
-        System.out.println(c.deleteMember(2));
-
-        System.out.println("------------------------");
-        System.out.println("Ausgabe Liste");
-        c.dump();
-        System.out.println("------------------------");
-        System.out.println("Anzahl aktuell abgespeicherter Objekte "+c.size());
-
-        /*catch(ContainerException e)
-        {
-            e.getMessage();
-        }*/
-        //System.out.println(list.toString());
-    }
-
-    public void addMember(Member member) throws ContainerException {
+     public void addMember(Member member) throws ContainerException {
 
         for (Member mem : list) {
             if (mem.getID().equals(member.getID())) {
@@ -63,6 +18,9 @@ public class Container implements Member{
         System.out.println(member.toString() + " konnte hinzugefuegt werden");
 
     }
+    //zu FA2 statement
+    //1. Fehler ist nicht direkt erkennbar. Es erschwert dem Tester somit möglich auftretende Fehler zu testen.
+    //2. Ein gutes Exception Handling dient dazu, die Fehlerursache zu analysieren und zu beseitigen.
     public String deleteMember(int id)
     {
         Iterator<Member> iter = list.iterator();
@@ -88,8 +46,5 @@ public class Container implements Member{
         return list.size();
     }
 
-    public String toString()
-    {
-        return "Member (ID = " +id + ")";
-    }
+
 }

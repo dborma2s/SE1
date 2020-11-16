@@ -10,15 +10,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ContainerTest {
     //Container Objekt zum Aufruf der Methoden in der Klasse Container
-    Container c = new Container(1);
-    //Member Objekt
-    Member m0 = new Container(0);
-    Member m1 = new Container(4);
-    Member m2 = new Container(3);
+    Container c = new Container();
+    //Member Objekte
+    Member m0 = new MemberPraxis(0);
+    Member m1 = new MemberPraxis(4);
+    Member m2 = new MemberPraxis(3);
 
-    Member m3 = new Container(1);
-    Member m4 = new Container(2);
-    Member m5 = new Container(2);
     @BeforeEach
     public void setup()
     {
@@ -30,7 +27,7 @@ class ContainerTest {
         }
         catch(ContainerException e)
         {
-            System.out.println(e.toString());
+            e.printStackTrace();
         }
     }
 
@@ -39,13 +36,11 @@ class ContainerTest {
     {
         //negativer Test, hinzufuegen von Members identische ID
         try {
-            c.addMember(m3);
-            c.addMember(m4);
-            c.addMember(m5);
-        }
+            c.addMember(m0);
+            }
         catch(ContainerException e)
         {
-            System.out.println(e.toString());
+            e.printStackTrace();
         }
     }
 
@@ -61,14 +56,18 @@ class ContainerTest {
             }
 
     @Test
-    void dump() {
+    void dump()
+    {
+        System.out.println("Ausgabe der Liste");
         c.dump();
-            }
+    }
 
     @Test
     void size() {
-        //leere Liste
-        assertEquals(0,c.size());
+        //Liste mit 3 Eintraegen
+        assertEquals(3,c.size());
+        c.deleteMember(3);
+        assertEquals(2,c.size());
     }
 
 }
