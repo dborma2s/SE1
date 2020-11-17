@@ -49,7 +49,7 @@ class ContainerTest {
     void deleteMember()
     {
         //Positivtest, lösche ID 3, array wird kleiner
-        c.deleteMember(3);
+        System.out.println(c.deleteMember(3));
         assertEquals(2,c.size());
         //Negativtest, lösche nicht vorhandene ID 10
         assertEquals("ID 10 nicht vorhanden.",c.deleteMember(10));

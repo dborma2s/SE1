@@ -18,17 +18,17 @@ public class Container {
         System.out.println(member.toString() + " konnte hinzugefuegt werden");
 
     }
-    //zu FA2 statement
-    //1. Fehler ist nicht direkt erkennbar. Es erschwert dem Tester somit möglich auftretende Fehler zu testen.
-    //2. Ein gutes Exception Handling dient dazu, die Fehlerursache zu analysieren und zu beseitigen.
-    public String deleteMember(int id)
+    /* zu FA2 statement
+    1. Ein gutes Exception Handling dient dazu, die Fehlerursache zu analysieren und zu beseitigen.
+    2. Der Fehler ist nicht direkt erkennbar. Es erschwert dem Tester somit möglich auftretende Fehler zu testen.*/
+    public String deleteMember(Integer id)
     {
         Iterator<Member> iter = list.iterator();
         while (iter.hasNext()) {
             Member mem = iter.next();
             if (mem.getID() == id) {
                 iter.remove();
-                return id + " wurde entfernt";
+                return "ID "+id + " wurde entfernt.";
             }        }
            return "ID " +id + " nicht vorhanden.";
     }
