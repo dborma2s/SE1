@@ -1,4 +1,4 @@
-package org.hbrs.se.ws20.uebung2;
+/*package org.hbrs.se.ws20.uebung2;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -70,4 +70,4 @@ class ContainerTest {
         assertEquals(2,c.size());
     }
 
-}
+}*/

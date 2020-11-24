@@ -4,6 +4,10 @@ package org.hbrs.se.ws20.uebung1.view;
 import org.hbrs.se.ws20.uebung1.control.Factory;
 import org.hbrs.se.ws20.uebung1.control.GermanTranslator;
 import org.hbrs.se.ws20.uebung1.control.Translator;
+import org.hbrs.se.ws20.uebung2.Container;
+import org.hbrs.se.ws20.uebung2.ContainerException;
+import org.hbrs.se.ws20.uebung2.MemberPraxis;
+import org.hbrs.se.ws20.uebung2.MemberView;
 
 class Client {
 
@@ -20,11 +24,14 @@ class Client {
 		System.out.println("Ergebnis: " + result);
 
 	}
+	public void createMembers(Container container, MemberView v) throws ContainerException {
 
-	public static void main(String[] args) {
-		Client c = new Client();
-		c.display(9);
+		for(int i = 0; i < 9; i++){
+			container.addMember(new MemberPraxis(i));
+		}
+		v.dump(container.getCurrentList());
 	}
+
 }
 
 

@@ -2,6 +2,7 @@ package org.hbrs.se.ws20.uebung3.persistence;
 
 import java.util.List;
 
+//Keine Implementierung, nur Testen der Exception
 public class PersistenceStrategyMongoDB<Member> implements PersistenceStrategy<Member> {
     @Override
     public void openConnection() throws PersistenceException {

@@ -1,6 +1,8 @@
 package org.hbrs.se.ws20.uebung2;
 
-public class MemberPraxis implements Member
+import java.io.Serializable;
+
+public class MemberPraxis implements Member, Serializable
 {
     private Integer id;
     public MemberPraxis(Integer id)
