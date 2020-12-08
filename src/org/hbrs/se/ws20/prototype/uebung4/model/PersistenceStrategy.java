@@ -1,4 +1,4 @@
-package org.hbrs.se.ws20.uebung3.persistence;
+package org.hbrs.se.ws20.prototype.uebung4.model;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,6 +14,7 @@ import java.util.List;
 public interface PersistenceStrategy<E> {
     public void openConnection() throws PersistenceException, IOException;
     public void closeConnection() throws PersistenceException;
-    public void save(List<E> member) throws PersistenceException;
+    public void save(List<E> story) throws PersistenceException, ContainerException;
     public List<E> load() throws PersistenceException, IOException, ClassNotFoundException;
+    public String getName();
 }

@@ -1,12 +1,15 @@
 package org.hbrs.se.ws20.uebung2;
 
-//Checked Exception
 public class ContainerException extends Exception {
 
-    public ContainerException(Member member)
-    {
-        super("Das Member-Objekt mit der ID "+ member.getID()+ " ist bereits vorhanden!");
+
+    private Integer id;
+
+    public void printStackTrace(){
+        System.out.println("Das Member-Objekt mit der ID " + this.id + " ist bereits vorhanden!");
     }
 
-
+    public void addId(Integer id){
+        this.id = id;
+    }
 }
